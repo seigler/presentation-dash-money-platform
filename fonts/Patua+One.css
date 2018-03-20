@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'Patua One';
+    font-style: normal;
+    font-weight: 400;
+    src: url(Patua+One_400_normal.eot); /* {{embedded-opentype-gf-url}} */
+    src: local('☺'),
+        url(Patua+One_400_normal.eot?#iefix) format('embedded-opentype'), /* {{embedded-opentype-gf-url}} */
+        url(Patua+One_400_normal.woff) format('woff'), /* http://fonts.gstatic.com/s/patuaone/v7/ZXuke1cDvLCKLDcimxB44_lo.woff */
+        url(Patua+One_400_normal.ttf) format('truetype'), /* http://fonts.gstatic.com/s/patuaone/v7/ZXuke1cDvLCKLDcimxB44_lrFgxbuQ.ttf */
+        url(Patua+One_400_normal.svg#Patua+One_400_normal) format('svg'); /* http://fonts.gstatic.com/l/font?kit=ZXuke1cDvLCKLDcimxB44_lp&skey=51d89b43b04a07a9&v=v7#PatuaOne */
+}
