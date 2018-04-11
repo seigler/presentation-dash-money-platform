@@ -4,17 +4,39 @@
     <title>Dash as a money platform</title>
     <meta charset='utf-8'>
     <style>
+      @import url('fonts/Montserrat.css');
       body {
-        font-family: sans-serif;
+        font-family: 'Montserrat', sans-serif;
         word-wrap: break-word;
       }
       h1, h2, h3 {
-        font-weight: normal;
+        font-weight: 700;
       }
       .remark-code, .remark-inline-code { font-family: monospace; }
+      .remark-container {
+        background-color: #000000;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%232f2f2f' stroke-width='1'%3E%3Cpath d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3Cpath d='M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382'/%3E%3Cpath d='M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269'/%3E%3C/g%3E%3Cg fill='%232f2f2f'%3E%3Ccircle cx='769' cy='229' r='5'/%3E%3Ccircle cx='539' cy='269' r='5'/%3E%3Ccircle cx='603' cy='493' r='5'/%3E%3Ccircle cx='731' cy='737' r='5'/%3E%3Ccircle cx='520' cy='660' r='5'/%3E%3Ccircle cx='309' cy='538' r='5'/%3E%3Ccircle cx='295' cy='764' r='5'/%3E%3Ccircle cx='40' cy='599' r='5'/%3E%3Ccircle cx='102' cy='382' r='5'/%3E%3Ccircle cx='127' cy='80' r='5'/%3E%3Ccircle cx='370' cy='105' r='5'/%3E%3Ccircle cx='578' cy='42' r='5'/%3E%3Ccircle cx='237' cy='261' r='5'/%3E%3Ccircle cx='390' cy='382' r='5'/%3E%3C/g%3E%3C/svg%3E");
+      }
       .remark-slide-container {
         opacity: 1;
         transition: opacity 0.5s ease;
+      }
+      .remark-slide-scaler {
+        box-shadow: 0 0 30px rgba(0,0,0,0.8);
+      }
+      .remark-slide-scaler::after {
+        content: '';
+        position: absolute;
+        z-index: 2;
+        bottom: 0;
+        right: 0;
+        height: 8em;
+        width: 18em;
+        background-image: url('img/logo-tharp-clark.svg'), linear-gradient(to bottom right, rgba(0,0,0,0) 50%, rgba(0,0,0,0.75));
+        background-size: auto 2em, cover;
+        background-position: 10em 5.1em, bottom right;
+        background-repeat: no-repeat;
+        opacity: 0.2;
       }
       .remark-fading {
         opacity: 0;
@@ -27,27 +49,44 @@
       .remark-slide-content {
         cursor: none;
         background-size: cover;
-        font-size: 28px;
+        font-size: 60px;
+        padding: 0 1.25em;
       }
       .remark-slide-content h3 {
-        font-size: 1.414em;
+        font-size: 1.2em;
       }
       .remark-slide-content h2 {
-        font-size: 2em;
+        display: inline-block;
+        font-size: 1.728em;
+        padding: 0.1ch 0.5ch 0.2ch;
+        background-color: hsl(207, 73%, 30%);
+        color: white;
+        -webkit-box-decoration-break: clone;
+        -o-box-decoration-break: clone;
+        box-decoration-break: clone;
+        border-radius: 0.1em;
+        mix-blend-mode: hard-light;
+        text-shadow: 0 0 0.5em rgba(0,0,0,0.75);
       }
       .remark-slide-content h1 {
-        font-size: 2.827em;
+        font-size: 1.728em;
       }
       .remark-slide-number {
         display: none;
       }
-      .big {
-        font-size: 4em;
-        padding: 0.2ch 0.5ch;
-        background-color: rgba(255,255,255,0.8);
-        -webkit-box-decoration-break: clone;
-        -o-box-decoration-break: clone;
-        box-decoration-break: clone;
+      .logo-gradient {
+        background-image: linear-gradient(to bottom, #008DE4, #0B0F3B);
+        background-color: #0B0F3B;
+        color: white;
+      }
+      .thin {
+        font-weight: 300;
+      }
+      .regular {
+        font-weight: 400;
+      }
+      .thick {
+        font-weight: 700;
       }
     </style>
   </head>
@@ -56,43 +95,51 @@
 name: title
 background-image: url('img/shrug.jpg')
 background-size: contain
-background-position: 80% 50%
+background-position: 100% 50%
+background-color: white
 
-# Who needs<br>cryptocurrency<br>today?
+# Who needs<br>crypto-<br>currency<br>today?
 
 ---
 background-image: url('img/1280px-Ceifa_em_Anticoli_Corrado_-_Pedro_Weingärtner.jpg')
+class: left
 
-.big[underbanked]
+## unbanked
 ???
-Rural or third-world regions
+In some regions of the world banking services are simply not offered, due to low population density, poverty, or other factors.
 
 (Image by Ceifa em Anticoli Corrado, by Pedro Weingärtner, 1909)
 
 ---
-background-image: url('img/payday-loans.jpg')
-background-position: 50% 60%
-.big[underbanked]
+background-image: url('img/check-cashing.jpg')
+background-position: 50% 50%
+class: right
+
+## underbanked
 ???
-(Image CC-BY 2.0 https://www.flickr.com/photos/andrewbain/524195139/)
+
+People with poor financial history may lose access to banking services.
+
+(Image CC-BY 2.0 Tony Webster https://www.flickr.com/photos/87296837@N00/17626366404)
 
 ---
 background-image: url('img/cannabis-leaf-hemp.jpg')
-.big[underbanked]
+class: right
+## underbanked
 ???
-Politically or socially marginalized groups (cannabis dispensaries)
+Politically or socially marginalized groups, like legal cannabis dispensaries, are often cut off from banking services or forced to operate as cash-only businesses.
 
 (image is in public domain)
 
 ---
 background-image: url('img/Exchange_Money_Conversion_to_Foreign_Currency-1024x574.jpg')
-class: right
+class: left
 
-.big[expatriates]
+## expatriates
 
 ???
 
-Sending money overseas into another currency is very expensive and slow.
+Sending money overseas is very expensive and slow, especially if it is also exchanged into another currency.
 
 (Image CC-BY 2.0 epSos.de)
 
@@ -100,7 +147,7 @@ Sending money overseas into another currency is very expensive and slow.
 background-image: url('img/zim-trillion.jpg')
 class: right bottom
 
-.big[inflation<br>victims]
+## inflation<br>victims
 
 ???
 
@@ -112,35 +159,88 @@ Countries like Venezuela and Zimbabwe have inflated their currency into uselessn
 background-image: url('img/14713883257_dd30ef9f51_k.jpg')
 background-position: 50% 25%
 
-.big[savers]
+## savers
 
 ???
 
-Inflation is a problem in first-world countries too. Most first-world nations practice _financial repression_, which is mild inflation which remains higher than common interest rates. This is a way to reduce national debt without quantitative easing.
+Inflation is a problem in first-world countries too. Nations with a lot of debt practice "financial repression", which is mild inflation which remains higher than typical interest rates. This is a way to reduce national debt without quantitative easing.
 
 (Image CC-BY 2.0 https://www.flickr.com/photos/126131780@N08/14713883257/)
 
 ---
 background-image: url('img/Trading-desk.jpg.png')
-class: center
+class: right
 
-.big[speculators]
+## speculators
 
 ???
 
-image origin unclear
+There is a lot of interest lately in new speculative assets, due to low interest rates but also due to barriers to investment. I think this is a big part of why ICOs have proven so popular: there is almost no barrier to entry.
+
+(image origin unclear)
 
 ---
 background-image: url('img/business.jpg')
 background-position: 50% 30%
 class: bottom
 
-.big[businesses]
+## businesses
 
 ???
 
-image origin unclear, used in memes
+Businesses bear most of the costs of normal financial transactions today. Cash transport costs, processing charges, chargebacks, and long settlement times all take a piece of gross income, which can dramatically reduce profits and force price increases.
 
+(image origin unclear, used in memes)
+---
+class: middle center logo-gradient
+
+![Dash logo](img/logo-tharp-clark.svg)
+
+???
+
+How does Dash meet those needs better than other cryptocurrencies?
+---
+class: logo-gradient
+
+# Digital Cash:
+
+--
+InstantSend  
+PrivateSend  
+Low Fees  
+
+--
+Cumbersome  
+Technical
+
+---
+class: logo-gradient
+
+# Dash Evolution
+
+--
+Usernames  
+Two-factor login  
+Simple merchant integration  
+
+---
+class: logo-gradient middle center
+
+# Implementation
+
+---
+class: middle center
+
+![Layer 1: miners](img/layers-1.svg)
+---
+class: middle center
+
+![Layer 2: masternodes](img/layers-12.svg)
+---
+class: middle center
+
+![Layer 3: DAPs](img/layers-123.svg)
+---
     </textarea>
     <script src='./lib/remark-latest.min.js'></script>
     <script>
